@@ -21,6 +21,6 @@ $(head -c 5000 log)
 \`\`\`
 EOS
 cat << EOS > log
-{ "text": $(cat data|python -c 'import json,sys; print(json.dumps(sys.stdin.read()))') }
+{ "text": $(cat data|python3 -c 'import json,sys; print(json.dumps(sys.stdin.read()))') }
 EOS
 curl -XPOST -H 'Content-type: application/json' -d @log "$SLACK_URL"
