@@ -17,7 +17,7 @@ aws cloudfront create-invalidation --distribution-id "$CF_DISTRIID" --paths "$CF
 cat << EOS > data
 end createrepo
 \`\`\`
-$(cat log)
+$(head -c 5000 log)
 \`\`\`
 EOS
 cat << EOS > log
